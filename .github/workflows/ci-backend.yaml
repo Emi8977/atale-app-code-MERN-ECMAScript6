@@ -9,7 +9,7 @@ on:
 
 env:
   IMAGE_NAME: emi8977/atales-backend #usuariodockerhub/nombreProyecto
-  MANIFESTS_REPO: emi8977/atales-k8s-node  #aca declaramos el repositorio donde vamos a guardar los manifiestos
+  MANIFESTS_REPO: emi8977/atale-k8s-MERN-ECMAScript6  #aca declaramos el repositorio donde vamos a guardar los manifiestos
 
 jobs:
   build-publish-patch:
@@ -70,12 +70,12 @@ jobs:
         with:
           repository: ${{ env.MANIFESTS_REPO }}
           token: ${{ secrets.K8S_REPO_PAT }}
-          path: atales-k8s-node    # <- Cambié este path para que coincida con el nuevo nombre
+          path: atale-k8s-MERN-ECMAScript6    # <- Cambié este path para que coincida con el nuevo nombre
           ref: main # <- especificás explícitamente la rama
           
       - name: Parchar el deployment con el nuevo tag
         run: |
-          PATCH_FILE="atales-k8s-node/overlays/${{ steps.overlay.outputs.overlay }}/patch-backend-deployment.yaml"   # <- corregido el path
+          PATCH_FILE="atale-k8s-MERN-ECMAScript6/overlays/${{ steps.overlay.outputs.overlay }}/patch-backend-deployment.yaml"   # <- corregido el path
 
           echo "Actualizando $PATCH_FILE con tag $IMAGE_TAG"
           sed -i "s|image: .*/atales-backend:.*|image: $IMAGE_NAME:$IMAGE_TAG|g" "$PATCH_FILE"    # <- corregido el nombre de imagen en el sed
