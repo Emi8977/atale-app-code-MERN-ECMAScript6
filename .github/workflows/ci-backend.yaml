@@ -82,7 +82,7 @@ jobs:
 
       - name: Commit & Push de los manifiestos parchados
         run: |
-          cd atales-k8s-node    
+          cd atale-k8s-MERN-ECMAScript6    
           git config user.email "ci@github.com"
           git config user.name "GitHub Actions"
           git add overlays/${{ steps.overlay.outputs.overlay }}/patch-backend-deployment.yaml
