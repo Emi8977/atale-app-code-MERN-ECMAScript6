@@ -50,7 +50,7 @@ app.post("/api/register", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor backend corriendo en el puerto ${PORT}`));
 */
-//haciendo commit23
+//haciendo commit234
 // index.js
 const express = require("express");
 const mongoose = require("mongoose");
