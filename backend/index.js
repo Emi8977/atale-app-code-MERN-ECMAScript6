@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
+
 const app = express();
 
 //haciendo commit 29-07 wowow  30-07 
@@ -49,7 +50,7 @@ app.post("/api/register", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor backend corriendo en el puerto ${PORT}`));
 */
-
+//haciendo commit
 // index.js
 const express = require("express");
 const mongoose = require("mongoose");
